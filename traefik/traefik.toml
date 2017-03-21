@@ -1,0 +1,6 @@
+
+logLevel = "DEBUG"
+
+
+[consulCatalog]
+endpoint = "consul.service.consul:8500"
