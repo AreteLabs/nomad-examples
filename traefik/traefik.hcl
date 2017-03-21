@@ -10,12 +10,12 @@ job "lb" {
     driver = "docker"
 
     artifact {
-      source      = "https://gist.githubusercontent.com/lnguyen/d490c2f0ae524e8fa962254bba4d6929/raw/2318e4ee53c1a20acc2fcd7a00d226d1f021bb97/traefik.toml"
+      source      = "git::http://github.com/AreteLabs/nomad-examples"
       destination = "local/config"
     }
 
     template {
-      source      = "local/config/traefik.toml"
+      source      = "local/config/traefik/traefik.toml"
       destination = "local/traefik/traefik.toml"
     }
 
@@ -67,6 +67,9 @@ job "lb" {
     }
 
     resources {
+      cpu    = 200
+      memory = 200
+
       network {
         mbits = 50
 
