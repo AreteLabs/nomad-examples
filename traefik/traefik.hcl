@@ -10,7 +10,7 @@ job "lb" {
     driver = "docker"
 
     artifact {
-      source      = "git::http://github.com/AreteLabs/nomad-examples"
+      source      = "git::https://github.com/AreteLabs/nomad-examples"
       destination = "local/config"
     }
 
