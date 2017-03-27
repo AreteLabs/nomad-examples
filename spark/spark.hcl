@@ -17,7 +17,7 @@ job "spark" {
         "${NOMAD_PORT_webui}",
       ]
 
-      dns_servers = ["${NOMAD_IP_webui}"]
+      dns_servers = ["${attr.unique.network.ip-address}"]
     }
 
     service {
@@ -64,7 +64,7 @@ job "spark" {
         "org.apache.spark.deploy.master.Master",
       ]
 
-      dns_servers = ["${NOMAD_IP_webui}"]
+      dns_servers = ["${attr.unique.network.ip-address}"]
     }
 
     env {

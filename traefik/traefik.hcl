@@ -35,7 +35,7 @@ job "lb" {
         frontend = 80
       }
 
-      dns_servers = ["${NOMAD_IP_admin}"]
+      dns_servers = ["${attr.unique.network.ip-address}"]
     }
 
     service {

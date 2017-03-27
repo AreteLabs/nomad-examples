@@ -18,7 +18,7 @@ job "scope-app" {
         web = 4040
       }
 
-      dns_servers = ["${NOMAD_IP_web}"]
+      dns_servers = ["${attr.unique.network.ip-address}"]
     }
 
     service {

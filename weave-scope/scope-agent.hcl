@@ -16,15 +16,11 @@ job "scope-agent" {
       pid_mode     = "host"
       network_mode = "host"
 
-      port_map {
-        web = 4040
-      }
-
       volumes = [
         "/var/run/docker.sock:/var/run/docker.sock:rw",
       ]
 
-      dns_servers = ["${NOMAD_IP_web}"]
+      dns_servers = ["${attr.unique.network.ip-address}"]
     }
 
     resources {
@@ -33,8 +29,6 @@ job "scope-agent" {
 
       network {
         mbits = 50
-        port  "web" {
-        }
       }
     }
   }

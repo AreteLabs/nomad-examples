@@ -16,7 +16,7 @@ job "queues" {
 
       config {
         image       = "wurstmeister/zookeeper"
-        dns_servers = ["${NOMAD_IP_zk}"]
+        dns_servers = ["${attr.unique.network.ip-address}"]
       }
 
       service {
@@ -54,7 +54,7 @@ job "queues" {
 
       config {
         image       = "wurstmeister/kafka"
-        dns_servers = ["${NOMAD_IP_port}"]
+        dns_servers = ["${attr.unique.network.ip-address}"]
 
         port_map {
           port = 9092
