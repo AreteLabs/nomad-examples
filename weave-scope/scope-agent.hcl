@@ -7,7 +7,7 @@ job "scope-agent" {
     driver = "docker"
 
     config {
-      image = "weaveworks/scope:1.2.1"
+      image = "weaveworks/scope:1.3.0"
 
       privileged = true
 
