@@ -23,6 +23,10 @@ job "scope-agent" {
       dns_servers = ["${attr.unique.network.ip-address}"]
     }
 
+    env {
+      SCOPE_HOSTNAME = "${node.unique.name}"
+    }
+
     resources {
       cpu    = 100
       memory = 100

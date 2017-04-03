@@ -35,6 +35,10 @@ job "scope-app" {
       }
     }
 
+    env {
+      SCOPE_HOSTNAME = "${node.unique.name}"
+    }
+
     resources {
       cpu    = 300
       memory = 300
